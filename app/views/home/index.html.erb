@@ -2,8 +2,15 @@
 
 <ul>
   <% if corsair_signed_in? %>
+    <p>
+      <%= "Hello there ! Time to gossip ;)" %>
+    </p>
+
     <li>
       <%= link_to "Sign out", destroy_corsair_session_path, method: :delete %>
+    </li>
+    <li>
+      <%= link_to "Edit account", edit_corsair_registration_path %>
     </li>
   <% else %>
     <li>
