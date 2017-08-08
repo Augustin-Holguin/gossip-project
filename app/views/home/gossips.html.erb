@@ -1,3 +1,33 @@
+<ul>
+  <% if corsair_signed_in? %>
+
+    <li>
+      <%= link_to "Edit account", edit_corsair_registration_path %>
+    </li>
+
+    <li>
+      <%= link_to "Sign out", destroy_corsair_session_path, method: :delete %>
+    </li>
+
+  <% else %>
+    <li>
+      <%= link_to "Sign in", new_corsair_session_path %>
+    </li>
+    <li>
+      <%= link_to "Sign up", new_corsair_registration_path %>
+    </li>
+
+  <% end %>
+</ul>
+
 <p>
   This is where the gossip happens ;)
 </p>
+
+
+<%= form_for @gossip do |f| %>
+<%= f.text_field_tag :content %> <br />
+<br />
+<%= f.text_area_tag :content %>
+<%= f.submit "Here we go" %>
+<% end %>
