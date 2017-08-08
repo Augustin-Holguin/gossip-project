@@ -1,17 +1,14 @@
-<h1>The Gossip Project</h1>
-
 <ul>
   <% if corsair_signed_in? %>
-    <p>
-      <%= "Hello there ! Time to gossip ;)" %>
-    </p>
+
+    <li>
+      <%= link_to "Edit account", edit_corsair_registration_path %>
+    </li>
 
     <li>
       <%= link_to "Sign out", destroy_corsair_session_path, method: :delete %>
     </li>
-    <li>
-      <%= link_to "Edit account", edit_corsair_registration_path %>
-    </li>
+
   <% else %>
     <li>
       <%= link_to "Sign in", new_corsair_session_path %>
@@ -19,5 +16,29 @@
     <li>
       <%= link_to "Sign up", new_corsair_registration_path %>
     </li>
+
   <% end %>
 </ul>
+
+
+<h1>The Gossip Project</h1>
+<% if corsair_signed_in? %>
+  <p>
+    Hello <%= current_corsair.username %> ! Time to gossip ;)
+  </p>
+
+  <p>
+    <%= link_to "Gossips", home_gossips_path %>
+  </p>
+
+  <% else %>
+
+  <p>
+    Please sign up or sign in if you already have an account !
+  </p>
+
+<% end %>
+
+<footer>
+  Made with love by Gossip Gus
+</footer>
