@@ -24,10 +24,7 @@
   This is where the gossip happens ;)
 </p>
 
-
-<%= form_for @gossip do |f| %>
-<%= f.text_field_tag :content %> <br />
+<%= text_field_tag :content %> <br />
 <br />
-<%= f.text_area_tag :content %>
-<%= f.submit "Here we go" %>
-<% end %>
+<%= text_area_tag :content %> <br />
+<%= "Here we go!" %>
