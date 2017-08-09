@@ -1,3 +1,3 @@
 class Gossip < ApplicationRecord
-  belongs_to :corsair  
+  #belongs_to :corsair  
 end

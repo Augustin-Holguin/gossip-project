@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
-  get 'gossips/new'
-
-  get 'gossips/create'
-
-  get 'gossips/edit'
-
-  get 'gossips/destroy'
-
-  get 'gossips/update'
+  resources :gossips
 
   devise_for :corsairs
   get 'home/index'
